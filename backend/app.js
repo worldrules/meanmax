@@ -36,7 +36,6 @@ app.post("/api/posts", (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   });
-  console.log(post);
   post.save().then(createdPost => {
     res.status(201).json({
       message: "Post added successfully",
@@ -58,7 +57,7 @@ app.delete("/api/posts/:id", (req, res, next) => {
   Post.deleteOne({ _id: req.params.id }).then(result => {
     console.log(result);
     res.status(200).json({ message: "Post deleted!" });
-  }); 
+  });
 });
 
 module.exports = app;
