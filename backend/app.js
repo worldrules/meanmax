@@ -9,7 +9,9 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://sadia:RkfivF0HZdjnDkmA@cluster0-vmmwh.mongodb.net/node-angular"
+    "mongodb+srv://sadia:RkfivF0HZdjnDkmA@cluster0-vmmwh.mongodb.net/node-angular", {
+      useNewUrlParser: true
+    }
   )
   .then(() => {
     console.log("Connected to database!");
