@@ -15,7 +15,7 @@ export class LoginComponent {
     if (form.invalid) {
       return;
     }
-    console.log(form.value.email, form.value.password);
+    this.isLoading = true;
     this.authService.login(form.value.email, form.value.password);
   }
 }
